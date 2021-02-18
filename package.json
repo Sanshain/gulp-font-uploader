@@ -1,0 +1,28 @@
+{
+  "name": "gulp-font-uploader",
+  "version": "1.0.0",
+  "description": "plugin for automatically downloading fonts from google fonts",
+  "main": "gulp-font-uploader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanshain/gulp-font-uploader.git"
+  },
+  "keywords": [
+    "gulp",
+    "fonts",
+    "google-fonts",
+    "plugin"
+  ],
+  "author": "Sanshain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sanshain/gulp-font-uploader/issues"
+  },
+  "homepage": "https://github.com/Sanshain/gulp-font-uploader#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
