@@ -39,15 +39,15 @@ export default function fontGetter(options) {
             options = options || { static_url: '/static/' }
             var data = file.contents.toString();
 
-            data = data.replace(/src: url\((?<url>http.*?\.ttf)\)/g, function (_, url) {
+            data = data.replace(/src: url\((?<url>http.*?\.(ttf|woff|woff2))\)/g, function (_, url) {
                 if (typeof url === typeof '') {
 
                     let fontName = url.split('/').slice(-1)[0];
                     let relUrl = options.static_url + 'fonts/' + fontName;
                     let filename = path.resolve(__dirname, 'fonts', fontName);
 
-                    console.log(relUrl)
-                    console.log(filename)
+                    console.log(`from url: ${relUrl}`)
+                    console.log(`saved: ${filename}`)
 
                     if (!fs.existsSync(filename)) {
                         const file = fs.createWriteStream(filename);
@@ -90,11 +90,10 @@ export default function fontGetter(options) {
             //     // console.log(value)
             // });
 
-
-
             //@ts-ignore
             file.contents = Buffer.from(data);
             this.push(file);
+
         }
         catch (err) {
             this.emit('error', new gutil.PluginError('gulp-import', err));
@@ -103,3 +102,6 @@ export default function fontGetter(options) {
     });
 }
 
+// dnt w f require. W_?
+const module = globalThis['module'] || {}
+module.exports = fontGetter;
