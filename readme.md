@@ -24,14 +24,14 @@ gulp.task('less', function () {
 
 Смысл скрипта прост: cсылки в css/less вида
 
-```
+```css
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 ```
 
 он конвертирует в 
 
-```
+```css
 @font-face {
   font-family: 'Cormorant Infant';
   font-style: italic;
